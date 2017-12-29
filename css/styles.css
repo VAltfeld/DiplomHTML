@@ -436,6 +436,12 @@ body {
     background-size: cover;
   }
 
+  .header .header__title--right {
+    top: 452px;
+    left: 640px;
+    letter-spacing: 4.5px;
+  }
+
   .header .header__buttons {
     top: 773px;
     display: -webkit-box;
@@ -681,12 +687,6 @@ body {
     top: 378px;
     left: 185px;
     letter-spacing: 4.96px;
-  }
-
-  .header .header__title--right {
-    top: 452px;
-    left: 640px;
-    letter-spacing: 4.5px;
   }
 }
 
@@ -945,6 +945,13 @@ body {
     background-size: cover;
   }
 
+  .header .header__title--right {
+    top: 336px;
+    left: 193px;
+    line-height: 1.2;
+    letter-spacing: 3.2px;
+  }
+
   .btn--app > span:before {
     top: -7px;
     left: -68px;
@@ -1128,13 +1135,6 @@ body {
     top: 267px;
     left: 84px;
     letter-spacing: 3.52px;
-  }
-
-  .header .header__title--right {
-    top: 336px;
-    left: 193px;
-    line-height: 1.2;
-    letter-spacing: 3.2px;
   }
 }
 
