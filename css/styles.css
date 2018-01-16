@@ -113,24 +113,29 @@ img {
   position: relative;
 }
 
-.header .header__hidden {
-  display: none;
-}
-
 .header .header__title {
   position: absolute;
-  display: block;
+  box-sizing: border-box;
   font-family: OpenSans-Bold, Arial, sans-serif;
+  line-height: 1.1;
   text-transform: uppercase;
   color: #ffffff;
 }
 
-.header .header__title--left {
-  line-height: 1;
+.header .header__title--left b {
+  float: left;
+  font-weight: normal;
 }
 
-.header .header__title--right {
-  line-height: 1;
+.header .header__title--left b::after {
+  display: block;
+  width: 100%;
+  content: "";
+  clear: both;
+}
+
+.header .header__title--left span {
+  float: right;
 }
 
 .header .header__buttons {
@@ -180,12 +185,18 @@ img {
   font-family: OpenSans-Bold, Arial, sans-serif;
 }
 
+.btn:hover {
+  background-color: #4a348b;
+}
+
 .logo {
   display: block;
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  background: url("../img/surface_logo_text.svg") no-repeat 100% 100%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
 }
 
 .sports {
@@ -436,10 +447,8 @@ body {
     background-size: cover;
   }
 
-  .header .header__title--right {
-    top: 452px;
-    left: 640px;
-    letter-spacing: 4.5px;
+  .header .header__title--left {
+    letter-spacing: 4.96px;
   }
 
   .header .header__buttons {
@@ -476,6 +485,7 @@ body {
     width: 191px;
     height: 52px;
     left: -18px;
+    font-size: 40px;
   }
 
   .logo--header {
@@ -680,13 +690,14 @@ body {
 
 @media (min-width: 1920px) {
   .header .header__title {
+    top: 378px;
+    padding-left: 185px;
+    padding-right: 185px;
     font-size: 90px;
   }
 
-  .header .header__title--left {
-    top: 378px;
-    left: 185px;
-    letter-spacing: 4.96px;
+  .header .header__title--left span {
+    letter-spacing: 4.5px;
   }
 }
 
@@ -706,19 +717,7 @@ body {
   }
 
   .header .header__title--left {
-    top: 200px;
-    left: 20px;
     letter-spacing: 1.54px;
-  }
-
-  .header .header__title--right {
-    top: 251px;
-    left: 64px;
-    letter-spacing: 1.4px;
-  }
-
-  .header .header__buttons {
-    top: 400px;
   }
 
   .btn {
@@ -769,6 +768,7 @@ body {
     width: 133px;
     height: 36px;
     left: -5px;
+    font-size: 25px;
   }
 
   .logo--header {
@@ -932,9 +932,24 @@ body {
   }
 }
 
+@media (max-width: 480px) {
+  .header .header__buttons {
+    top: 400px;
+  }
+}
+
 @media (max-width: 320px) {
   .header .header__title {
+    top: 200px;
+    padding-left: 20px;
     font-size: 28px;
+  }
+
+  .header .header__title--left span {
+    padding-top: 20px;
+    padding-left: 45px;
+    padding-right: 20px;
+    letter-spacing: 1.4px;
   }
 }
 
@@ -945,11 +960,8 @@ body {
     background-size: cover;
   }
 
-  .header .header__title--right {
-    top: 336px;
-    left: 193px;
-    line-height: 1.2;
-    letter-spacing: 3.2px;
+  .header .header__title--left {
+    letter-spacing: 3.52px;
   }
 
   .btn--app > span:before {
@@ -978,6 +990,7 @@ body {
     width: 205px;
     height: 56px;
     left: -5px;
+    font-size: 35px;
   }
 
   .logo--header {
@@ -1120,21 +1133,40 @@ body {
 
 @media (min-width: 321px) and (max-width: 768px) {
   .header .header__title {
+    top: calc(200px + (267 - 200) * ( (100vw - 320px) / ( 768 - 320) ));
+    padding-left: calc(20px + (80 - 20) * ( (100vw - 320px) / ( 768 - 320) ));
     font-size: calc(28px + (64 - 28) * ( (100vw - 320px) / ( 768 - 320) ));
+  }
+
+  .header .header__title--left span {
+    padding-top: calc(20px - (20 - 0) * ( (100vw - 320px) / ( 768 - 320) ));
+    padding-left: calc(45px + (105 - 45) * ( (100vw - 320px) / ( 768 - 320) ));
+    letter-spacing: calc(3.2px + (3.2 - 1.4) * ( (100vw - 320px) / ( 768 - 320) ));
   }
 }
 
 @media (min-width: 769px) and (max-width: 1919px) {
   .header .header__title {
+    top: calc(267px + (378 - 267) * ( (100vw - 769px) / ( 1919 - 769) ));
+    padding-left: calc(80px + (185 - 80) * ( (100vw - 769px) / ( 1919 - 769) ));
     font-size: calc(64px + (90 - 64) * ( (100vw - 769px) / ( 1919 - 769) ));
+  }
+
+  .header .header__title--left span {
+    padding-left: calc(105px - (105 - 0) * ( (100vw - 769px) / ( 1919 - 769) ));
+    letter-spacing: calc(4.5px - (4.5 - 3.2) * ( (100vw - 769px) / ( 1919 - 769) ));
   }
 }
 
-@media (min-width: 641px) and (max-width: 1919px) {
-  .header .header__title--left {
-    top: 267px;
-    left: 84px;
-    letter-spacing: 3.52px;
+@media (min-width: 800px) and (max-width: 1919px) {
+  .header .header__title {
+    padding-right: calc(80px + (185 - 80) * ( (100vw - 800px) / ( 1919 - 800) ));
+  }
+}
+
+@media (min-width: 481px) and (max-width: 640px) {
+  .header .header__buttons {
+    top: 450px;
   }
 }
 
