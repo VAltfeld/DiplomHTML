@@ -1153,7 +1153,7 @@ body {
   }
 
   .header .header__title--left span {
-    padding-left: calc(105px - (105 - 0) * ( (100vw - 769px) / ( 1919 - 769) ));
+    padding-left: 105px;
     letter-spacing: calc(4.5px - (4.5 - 3.2) * ( (100vw - 769px) / ( 1919 - 769) ));
   }
 }
